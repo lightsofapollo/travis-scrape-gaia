@@ -18,4 +18,21 @@ suite('parse log', function() {
       });
     });
   });
+
+  suite('fail', function() {
+    var fixture = fs.readFileSync(__dirname + '/fixtures/failing.txt', 'utf8');
+
+    var subject;
+    setup(function() {
+      subject = parseLog(fixture);
+    });
+
+    test('unit tests', function() {
+      assert.deepEqual(subject, {
+        unit: { passed: 4932, failed: 1 },
+        integration: { passed: 4, failed: 1 }
+      });
+    });
+
+  });
 });
