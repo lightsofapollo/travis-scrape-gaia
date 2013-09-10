@@ -1,0 +1,19 @@
+{
+  "name": "travis-scrape",
+  "version": "0.0.0",
+  "description": "Hacky scraper for gaia travis ci",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "travis-ci": "~1.0.1",
+    "commander": "~2.0.0",
+    "colors": "~0.6.2"
+  },
+  "devDependencies": {
+    "mocha": "~1.12.1"
+  }
+}

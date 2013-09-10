@@ -1,0 +1,572 @@
+Using worker: worker-linux-6-2.bb.travis-ci.org:travis-linux-19
+
+travis_fold:start:git.1
+$ git clone --depth=50 --branch=master git://github.com/mozilla-b2g/gaia.git mozilla-b2g/gaia
+Cloning into 'mozilla-b2g/gaia'...
+remote: Counting objects: 46966, done.[K
+remote: Compressing objects:   0% (1/24866)   [K
+remote: Compressing objects:   1% (249/24866)   [K
+remote: Compressing objects:   2% (498/24866)   [K
+remote: Compressing objects:   3% (746/24866)   [K
+remote: Compressing objects:   4% (995/24866)   [K
+remote: Compressing objects:   5% (1244/24866)   [K
+remote: Compressing objects:   6% (1492/24866)   [K
+remote: Compressing objects:   6% (1494/24866)   [K
+remote: Compressing objects:   6% (1499/24866)   [K
+remote: Compressing objects:   6% (1504/24866)   [K
+remote: Compressing objects:   6% (1509/24866)   [K
+remote: Compressing objects:   6% (1514/24866)   [K
+remote: Compressing objects:   6% (1519/24866)   [K
+remote: Compressing objects:   7% (1741/24866)   [K
+remote: Compressing objects:   8% (1990/24866)   [K
+remote: Compressing objects:   9% (2238/24866)   [K
+remote: Compressing objects:  10% (2487/24866)   [K
+remote: Compressing objects:  11% (2736/24866)   [K
+remote: Compressing objects:  11% (2922/24866)   [K
+remote: Compressing objects:  12% (2984/24866)   [K
+remote: Compressing objects:  13% (3233/24866)   [K
+remote: Compressing objects:  14% (3482/24866)   [K
+remote: Compressing objects:  15% (3730/24866)   [K
+remote: Compressing objects:  16% (3979/24866)   [K
+remote: Compressing objects:  17% (4228/24866)   [K
+remote: Compressing objects:  18% (4476/24866)   [K
+remote: Compressing objects:  19% (4725/24866)   [K
+remote: Compressing objects:  20% (4974/24866)   [K
+remote: Compressing objects:  21% (5222/24866)   [K
+remote: Compressing objects:  22% (5471/24866)   [K
+remote: Compressing objects:  23% (5720/24866)   [K
+remote: Compressing objects:  23% (5773/24866)   [K
+remote: Compressing objects:  24% (5968/24866)   [K
+remote: Compressing objects:  25% (6217/24866)   [K
+remote: Compressing objects:  26% (6466/24866)   [K
+remote: Compressing objects:  26% (6704/24866)   [K
+remote: Compressing objects:  26% (6706/24866)   [K
+remote: Compressing objects:  26% (6708/24866)   [K
+remote: Compressing objects:  26% (6709/24866)   [K
+remote: Compressing objects:  27% (6714/24866)   [K
+remote: Compressing objects:  27% (6934/24866)   [K
+remote: Compressing objects:  27% (6937/24866)   [K
+remote: Compressing objects:  28% (6963/24866)   [K
+remote: Compressing objects:  29% (7212/24866)   [K
+remote: Compressing objects:  30% (7460/24866)   [K
+remote: Compressing objects:  31% (7709/24866)   [K
+remote: Compressing objects:  32% (7958/24866)   [K
+remote: Compressing objects:  33% (8206/24866)   [K
+remote: Compressing objects:  34% (8455/24866)   [K
+remote: Compressing objects:  35% (8704/24866)   [K
+remote: Compressing objects:  36% (8952/24866)   [K
+remote: Compressing objects:  37% (9201/24866)   [K
+remote: Compressing objects:  38% (9450/24866)   [K
+remote: Compressing objects:  39% (9698/24866)   [K
+remote: Compressing objects:  40% (9947/24866)   [K
+remote: Compressing objects:  41% (10196/24866)   [K
+remote: Compressing objects:  42% (10444/24866)   [K
+remote: Compressing objects:  43% (10693/24866)   [K
+remote: Compressing objects:  44% (10942/24866)   [K
+remote: Compressing objects:  45% (11190/24866)   [K
+remote: Compressing objects:  46% (11439/24866)   [K
+remote: Compressing objects:  47% (11688/24866)   [K
+remote: Compressing objects:  48% (11936/24866)   [K
+remote: Compressing objects:  49% (12185/24866)   [K
+remote: Compressing objects:  50% (12433/24866)   [K
+remote: Compressing objects:  51% (12682/24866)   [K
+remote: Compressing objects:  52% (12931/24866)   [K
+remote: Compressing objects:  53% (13179/24866)   [K
+remote: Compressing objects:  54% (13428/24866)   [K
+remote: Compressing objects:  55% (13677/24866)   [K
+remote: Compressing objects:  56% (13925/24866)   [K
+remote: Compressing objects:  57% (14174/24866)   [K
+remote: Compressing objects:  58% (14423/24866)   [K
+remote: Compressing objects:  59% (14671/24866)   [K
+remote: Compressing objects:  60% (14920/24866)   [K
+remote: Compressing objects:  61% (15169/24866)   [K
+remote: Compressing objects:  62% (15417/24866)   [K
+remote: Compressing objects:  63% (15666/24866)   [K
+remote: Compressing objects:  64% (15915/24866)   [K
+remote: Compressing objects:  65% (16163/24866)   [K
+remote: Compressing objects:  66% (16412/24866)   [K
+remote: Compressing objects:  67% (16661/24866)   [K
+remote: Compressing objects:  68% (16909/24866)   [K
+remote: Compressing objects:  69% (17158/24866)   [K
+remote: Compressing objects:  70% (17407/24866)   [K
+remote: Compressing objects:  71% (17655/24866)   [K
+remote: Compressing objects:  72% (17904/24866)   [K
+remote: Compressing objects:  73% (18153/24866)   [K
+remote: Compressing objects:  74% (18401/24866)   [K
+remote: Compressing objects:  75% (18650/24866)   [K
+remote: Compressing objects:  76% (18899/24866)   [K
+remote: Compressing objects:  77% (19147/24866)   [K
+remote: Compressing objects:  78% (19396/24866)   [K
+remote: Compressing objects:  79% (19645/24866)   [K
+remote: Compressing objects:  80% (19893/24866)   [K
+remote: Compressing objects:  81% (20142/24866)   [K
+remote: Compressing objects:  82% (20391/24866)   [K
+remote: Compressing objects:  83% (20639/24866)   [K
+remote: Compressing objects:  84% (20888/24866)   [K
+remote: Compressing objects:  85% (21137/24866)   [K
+remote: Compressing objects:  86% (21385/24866)   [K
+remote: Compressing objects:  87% (21634/24866)   [K
+remote: Compressing objects:  88% (21883/24866)   [K
+remote: Compressing objects:  89% (22131/24866)   [K
+remote: Compressing objects:  90% (22380/24866)   [K
+remote: Compressing objects:  91% (22629/24866)   [K
+remote: Compressing objects:  92% (22877/24866)   [K
+remote: Compressing objects:  93% (23126/24866)   [K
+remote: Compressing objects:  94% (23375/24866)   [K
+remote: Compressing objects:  95% (23623/24866)   [K
+remote: Compressing objects:  96% (23872/24866)   [K
+remote: Compressing objects:  97% (24121/24866)   [K
+remote: Compressing objects:  98% (24369/24866)   [K
+remote: Compressing objects:  99% (24618/24866)   [K
+remote: Compressing objects: 100% (24866/24866)   [K
+remote: Compressing objects: 100% (24866/24866), done.[K
+Receiving objects:   0% (1/46966)   
+Receiving objects:   1% (470/46966)   
+Receiving objects:   2% (940/46966)   
+Receiving objects:   3% (1409/46966)   
+Receiving objects:   4% (1879/46966)   
+Receiving objects:   5% (2349/46966)   
+Receiving objects:   6% (2818/46966)   
+Receiving objects:   7% (3288/46966)   
+Receiving objects:   8% (3758/46966)   
+Receiving objects:   9% (4227/46966)   
+Receiving objects:  10% (4697/46966)   
+Receiving objects:  11% (5167/46966)   
+Receiving objects:  12% (5636/46966)   
+Receiving objects:  13% (6106/46966)   
+Receiving objects:  14% (6576/46966)   
+Receiving objects:  15% (7045/46966)   
+Receiving objects:  16% (7515/46966)   
+Receiving objects:  17% (7985/46966)   
+Receiving objects:  17% (8038/46966), 21.54 MiB | 21.49 MiB/s   
+Receiving objects:  18% (8454/46966), 38.75 MiB | 25.78 MiB/s   
+Receiving objects:  19% (8924/46966), 38.75 MiB | 25.78 MiB/s   
+Receiving objects:  20% (9394/46966), 38.75 MiB | 25.78 MiB/s   
+Receiving objects:  20% (9658/46966), 38.75 MiB | 25.78 MiB/s   
+Receiving objects:  20% (9767/46966), 68.77 MiB | 21.59 MiB/s   
+Receiving objects:  20% (9828/46966), 80.45 MiB | 21.83 MiB/s   
+Receiving objects:  21% (9863/46966), 92.13 MiB | 22.00 MiB/s   
+Receiving objects:  21% (9868/46966), 111.09 MiB | 23.70 MiB/s   
+Receiving objects:  22% (10333/46966), 158.34 MiB | 29.18 MiB/s   
+Receiving objects:  23% (10803/46966), 158.34 MiB | 29.18 MiB/s   
+Receiving objects:  23% (11010/46966), 158.34 MiB | 29.18 MiB/s   
+Receiving objects:  24% (11272/46966), 197.55 MiB | 31.19 MiB/s   
+Receiving objects:  25% (11742/46966), 197.55 MiB | 31.19 MiB/s   
+Receiving objects:  26% (12212/46966), 197.55 MiB | 31.19 MiB/s   
+Receiving objects:  27% (12681/46966), 197.55 MiB | 31.19 MiB/s   
+Receiving objects:  28% (13151/46966), 197.55 MiB | 31.19 MiB/s   
+Receiving objects:  29% (13621/46966), 197.55 MiB | 31.19 MiB/s   
+Receiving objects:  30% (14090/46966), 197.55 MiB | 31.19 MiB/s   
+Receiving objects:  31% (14560/46966), 197.55 MiB | 31.19 MiB/s   
+Receiving objects:  32% (15030/46966), 197.55 MiB | 31.19 MiB/s   
+Receiving objects:  32% (15244/46966), 197.55 MiB | 31.19 MiB/s   
+Receiving objects:  33% (15499/46966), 197.55 MiB | 31.19 MiB/s   
+Receiving objects:  34% (15969/46966), 197.55 MiB | 31.19 MiB/s   
+Receiving objects:  35% (16439/46966), 197.55 MiB | 31.19 MiB/s   
+Receiving objects:  36% (16908/46966), 197.55 MiB | 31.19 MiB/s   
+Receiving objects:  37% (17378/46966), 213.73 MiB | 31.76 MiB/s   
+Receiving objects:  38% (17848/46966), 213.73 MiB | 31.76 MiB/s   
+Receiving objects:  39% (18317/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  40% (18787/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  41% (19257/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  42% (19726/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  43% (20196/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  44% (20666/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  45% (21135/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  46% (21605/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  47% (22075/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  48% (22544/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  49% (23014/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  50% (23483/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  51% (23953/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  52% (24423/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  53% (24892/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  54% (25362/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  55% (25832/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  56% (26301/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  57% (26771/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  58% (27241/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  59% (27710/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  59% (27725/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  60% (28180/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  61% (28650/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  62% (29119/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  63% (29589/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  64% (30059/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  65% (30528/46966), 229.00 MiB | 35.54 MiB/s   
+Receiving objects:  66% (30998/46966), 244.66 MiB | 36.42 MiB/s   
+Receiving objects:  67% (31468/46966), 244.66 MiB | 36.42 MiB/s   
+Receiving objects:  68% (31937/46966), 244.66 MiB | 36.42 MiB/s   
+Receiving objects:  69% (32407/46966), 244.66 MiB | 36.42 MiB/s   
+Receiving objects:  70% (32877/46966), 244.66 MiB | 36.42 MiB/s   
+Receiving objects:  71% (33346/46966), 244.66 MiB | 36.42 MiB/s   
+Receiving objects:  72% (33816/46966), 244.66 MiB | 36.42 MiB/s   
+Receiving objects:  73% (34286/46966), 244.66 MiB | 36.42 MiB/s   
+Receiving objects:  74% (34755/46966), 244.66 MiB | 36.42 MiB/s   
+Receiving objects:  75% (35225/46966), 244.66 MiB | 36.42 MiB/s   
+Receiving objects:  76% (35695/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  77% (36164/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  78% (36634/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  79% (37104/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  80% (37573/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  81% (38043/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  82% (38513/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  83% (38982/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  84% (39452/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  85% (39922/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  86% (40391/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  87% (40861/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  88% (41331/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  89% (41800/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  90% (42270/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  91% (42740/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  92% (43209/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  92% (43638/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  93% (43679/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  94% (44149/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  95% (44618/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  96% (45088/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  97% (45558/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  98% (46027/46966), 258.31 MiB | 36.86 MiB/s   
+Receiving objects:  99% (46497/46966), 258.31 MiB | 36.86 MiB/s   
+remote: Total 46966 (delta 31136), reused 35584 (delta 21209)[K
+Receiving objects: 100% (46966/46966), 276.45 MiB | 35.36 MiB/s   
+Receiving objects: 100% (46966/46966), 280.69 MiB | 33.79 MiB/s, done.
+Resolving deltas:   0% (0/31136)   
+Resolving deltas:   1% (314/31136)   
+Resolving deltas:   2% (624/31136)   
+Resolving deltas:   3% (937/31136)   
+Resolving deltas:   4% (1248/31136)   
+Resolving deltas:   5% (1560/31136)   
+Resolving deltas:   6% (1869/31136)   
+Resolving deltas:   7% (2191/31136)   
+Resolving deltas:   8% (2514/31136)   
+Resolving deltas:   9% (2809/31136)   
+Resolving deltas:  10% (3119/31136)   
+Resolving deltas:  11% (3431/31136)   
+Resolving deltas:  12% (3759/31136)   
+Resolving deltas:  13% (4053/31136)   
+Resolving deltas:  14% (4362/31136)   
+Resolving deltas:  15% (4722/31136)   
+Resolving deltas:  16% (4991/31136)   
+Resolving deltas:  17% (5297/31136)   
+Resolving deltas:  18% (5612/31136)   
+Resolving deltas:  19% (5935/31136)   
+Resolving deltas:  20% (6234/31136)   
+Resolving deltas:  21% (6552/31136)   
+Resolving deltas:  22% (6867/31136)   
+Resolving deltas:  23% (7166/31136)   
+Resolving deltas:  24% (7494/31136)   
+Resolving deltas:  25% (7785/31136)   
+Resolving deltas:  26% (8127/31136)   
+Resolving deltas:  27% (8420/31136)   
+Resolving deltas:  28% (8734/31136)   
+Resolving deltas:  29% (9040/31136)   
+Resolving deltas:  30% (9553/31136)   
+Resolving deltas:  31% (9656/31136)   
+Resolving deltas:  32% (10157/31136)   
+Resolving deltas:  34% (10609/31136)   
+Resolving deltas:  35% (10921/31136)   
+Resolving deltas:  36% (11210/31136)   
+Resolving deltas:  37% (11530/31136)   
+Resolving deltas:  38% (11847/31136)   
+Resolving deltas:  39% (12144/31136)   
+Resolving deltas:  40% (12470/31136)   
+Resolving deltas:  41% (12770/31136)   
+Resolving deltas:  42% (13078/31136)   
+Resolving deltas:  43% (13392/31136)   
+Resolving deltas:  44% (13706/31136)   
+Resolving deltas:  45% (14014/31136)   
+Resolving deltas:  46% (14333/31136)   
+Resolving deltas:  47% (14695/31136)   
+Resolving deltas:  48% (15071/31136)   
+Resolving deltas:  49% (15267/31136)   
+Resolving deltas:  50% (15590/31136)   
+Resolving deltas:  51% (15937/31136)   
+Resolving deltas:  52% (16214/31136)   
+Resolving deltas:  53% (16527/31136)   
+Resolving deltas:  54% (16814/31136)   
+Resolving deltas:  54% (16909/31136)   
+Resolving deltas:  55% (17164/31136)   
+Resolving deltas:  56% (17441/31136)   
+Resolving deltas:  57% (17758/31136)   
+Resolving deltas:  58% (18060/31136)   
+Resolving deltas:  59% (18377/31136)   
+Resolving deltas:  60% (18738/31136)   
+Resolving deltas:  61% (19259/31136)   
+Resolving deltas:  62% (19402/31136)   
+Resolving deltas:  63% (19634/31136)   
+Resolving deltas:  64% (19937/31136)   
+Resolving deltas:  65% (20293/31136)   
+Resolving deltas:  66% (20550/31136)   
+Resolving deltas:  67% (20936/31136)   
+Resolving deltas:  68% (21174/31136)   
+Resolving deltas:  69% (21489/31136)   
+Resolving deltas:  70% (21913/31136)   
+Resolving deltas:  71% (22108/31136)   
+Resolving deltas:  72% (22433/31136)   
+Resolving deltas:  73% (22741/31136)   
+Resolving deltas:  74% (23041/31136)   
+Resolving deltas:  75% (23473/31136)   
+Resolving deltas:  76% (23671/31136)   
+Resolving deltas:  77% (23976/31136)   
+Resolving deltas:  78% (24294/31136)   
+Resolving deltas:  79% (24716/31136)   
+Resolving deltas:  80% (24912/31136)   
+Resolving deltas:  81% (25250/31136)   
+Resolving deltas:  82% (25634/31136)   
+Resolving deltas:  83% (25850/31136)   
+Resolving deltas:  84% (26157/31136)   
+Resolving deltas:  86% (27014/31136)   
+Resolving deltas:  87% (27094/31136)   
+Resolving deltas:  88% (27407/31136)   
+Resolving deltas:  89% (27717/31136)   
+Resolving deltas:  90% (28023/31136)   
+Resolving deltas:  91% (28335/31136)   
+Resolving deltas:  92% (28646/31136)   
+Resolving deltas:  93% (28982/31136)   
+Resolving deltas:  94% (29275/31136)   
+Resolving deltas:  95% (29587/31136)   
+Resolving deltas:  96% (29902/31136)   
+Resolving deltas:  97% (30207/31136)   
+Resolving deltas:  98% (30567/31136)   
+Resolving deltas:  99% (30861/31136)   
+Resolving deltas: 100% (31136/31136)   
+Resolving deltas: 100% (31136/31136), done.
+travis_fold:end:git.1
+$ cd mozilla-b2g/gaia
+travis_fold:start:git.2
+$ git checkout -qf 25710929806fa5526fb6ed4e4af8ae050f9bb73a
+travis_fold:end:git.2
+$ rvm use default --install --binary --fuzzy
+[32mUsing /home/travis/.rvm/gems/ruby-1.9.3-p448[0m
+$ ruby --version
+ruby 1.9.3p448 (2013-06-27 revision 41675) [x86_64-linux]
+$ rvm --version
+
+rvm 1.21.3 (latest-minor) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
+
+$ gem --version
+2.0.3
+travis_fold:start:before_script.1
+$ export DISPLAY=:99.0
+travis_fold:end:before_script.1
+travis_fold:start:before_script.2
+$ sh -e /etc/init.d/xvfb start
+Starting virtual X frame buffer: Xvfb.
+travis_fold:end:before_script.2
+$ bash ./tools/ci/unit/travis.sh
+
+[32;1mPreparing test environment[0m
+[32;1m==========================[0m
+Downloading and installing closure linter
+Downloading Firefox
+Downloading & installing node dependencies
+Downloading xulrunner-sdk and making profile for testing (more than 5 minutes)
+Starting test-agent-server and waiting for server to start on port 18003
+Starting Firefox
+
+[32;1mmake lint[0m
+[32;1m=========[0m
+# --disable 210,217,220,225 replaces --nojsdoc because it's broken in closure-linter 2.3.10
+# http://code.google.com/p/closure-linter/issues/detail?id=64
+gjslint --disable 210,217,220,225 -r apps -r shared -e 'homescreen/everything.me,pdfjs/content,pdfjs/test,email/build,email/built,email/js/ext,calendar/js/ext,tools/,b2g/' -x 'build/r.js,apps/communications/contacts/oauth2/js/parameters.js,apps/calendar/js/presets.js,apps/email/js/alameda.js,apps/email/js/tmpl_builder.js,shared/js/opensearch.js,apps/keyboard/js/imes/jspinyin/libpinyin.js,shared/js/setImmediate.js,apps/gallery/test/unit/setImmediate_test.js'
+Skipping 61 file(s).
+997 files checked, no errors found.
+
+[32;1mIntegration Tests (make test-integration)[0m
+[32;1m=========================================[0m
+# override existing profile-test folder.
+PROFILE_FOLDER=profile-test make
+make[1]: Entering directory `/home/travis/build/mozilla-b2g/gaia'
+echo "$BUILD_CONFIG" > /home/travis/build/mozilla-b2g/gaia/build/config.js
+test -d profile-test || mkdir -p profile-test
+run-js-command  applications-data
+Looking for packaged app: /home/travis/build/mozilla-b2g/gaia/external-apps/marketplace.firefox.com/update.webapp
+run-js-command  preferences
+make[2]: Entering directory `/home/travis/build/mozilla-b2g/gaia/apps/email'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/travis/build/mozilla-b2g/gaia/apps/email'
+make[2]: Entering directory `/home/travis/build/mozilla-b2g/gaia/apps/system'
+make[2]: Leaving directory `/home/travis/build/mozilla-b2g/gaia/apps/system'
+make[2]: Entering directory `/home/travis/build/mozilla-b2g/gaia/apps/calendar'
+
+make[2]: Leaving directory `/home/travis/build/mozilla-b2g/gaia/apps/calendar'
+make[2]: Entering directory `/home/travis/build/mozilla-b2g/gaia/apps/music'
+make[2]: Nothing to be done for `concatenated_scripts'.
+make[2]: Leaving directory `/home/travis/build/mozilla-b2g/gaia/apps/music'
+make[2]: Entering directory `/home/travis/build/mozilla-b2g/gaia/apps/gallery'
+make[2]: Nothing to be done for `concatenated_scripts'.
+make[2]: Leaving directory `/home/travis/build/mozilla-b2g/gaia/apps/gallery'
+make[2]: Entering directory `/home/travis/build/mozilla-b2g/gaia/apps/settings'
+make[2]: Leaving directory `/home/travis/build/mozilla-b2g/gaia/apps/settings'
+make[2]: Entering directory `/home/travis/build/mozilla-b2g/gaia/test_apps/music2'
+make[2]: Nothing to be done for `concatenated_scripts'.
+make[2]: Leaving directory `/home/travis/build/mozilla-b2g/gaia/test_apps/music2'
+Finished: bootstrapping test proxies/sandboxes
+Finished: test ui config file: ./test_apps/test-agent/config.json
+run-js-command  webapp-manifests
+run-js-command  webapp-optimize
+/apps/communications/contacts/index.html: [l10n] 1 missing key(s) for [en-US]: #type_l10n_id#
+/apps/communications/contacts/index.html: [l10n] 1 missing key(s) for [zh-TW]: #type_l10n_id#
+/apps/communications/contacts/index.html: [l10n] 1 missing key(s) for [fr]: #type_l10n_id#
+/apps/communications/contacts/index.html: [l10n] 1 missing key(s) for [ar]: #type_l10n_id#
+/home/travis/build/mozilla-b2g/gaia/shared/locales/branding/unofficial/branding.ar.properties could not be found.
+/home/travis/build/mozilla-b2g/gaia/shared/locales/branding/unofficial/branding.ar.properties could not be found.
+/home/travis/build/mozilla-b2g/gaia/shared/locales/branding/unofficial/branding.ar.properties could not be found.
+/home/travis/build/mozilla-b2g/gaia/shared/locales/branding/unofficial/branding.ar.properties could not be found.
+/apps/system/index.html: [l10n] 2 missing key(s) for [en-US]: confirmation, Ok
+/apps/system/index.html: [l10n] 2 missing key(s) for [zh-TW]: confirmation, Ok
+/apps/system/index.html: [l10n] 2 missing key(s) for [fr]: confirmation, Ok
+/apps/system/index.html: [l10n] 2 missing key(s) for [ar]: confirmation, Ok
+/home/travis/build/mozilla-b2g/gaia/shared/locales/branding/unofficial/branding.ar.properties could not be found.
+/home/travis/build/mozilla-b2g/gaia/test_apps/geoloc/locales/geoloc.ar.properties could not be found.
+run-js-command  webapp-zip
+run-js-command  optimize-clean
+Finished: Generating extensions
+test -d .git && cp tools/pre-commit .git/hooks/pre-commit || true
+run-js-command  settings
+# create a clean folder to store data for B2G, this folder will copy to b2g output folder.
+rm -rf profile-test/defaults
+mkdir -p profile-test/defaults/pref
+# rename user_pref() to pref() in user.js
+sed s/user_pref\(/pref\(/ profile-test/user.js > profile-test/defaults/pref/user.js
+cp profile-test/settings.json profile-test/defaults/settings.json
+Profile Ready: please run [b2g|firefox] -profile /home/travis/build/mozilla-b2g/gaia/profile-test
+make[1]: Leaving directory `/home/travis/build/mozilla-b2g/gaia'
+./bin/gaia-marionette ./apps/email/test/marionette/send_imap_email_test.js ./apps/email/test/marionette/reply_imap_email_test.js ./apps/email/test/marionette/notification_foreground_test.js ./apps/browser/test/marionette/contextmenu_test.js ./apps/browser/test/marionette/navigate_test.js ./apps/browser/test/marionette/awesomescreen_test.js ./apps/system/test/marionette/notification_test.js ./apps/calendar/test/marionette/launch_test.js ./apps/calendar/test/marionette/week_view_test.js ./apps/calendar/test/marionette/create_event_test.js
+make[1]: Entering directory `/home/travis/build/mozilla-b2g/gaia'
+make[1]: `b2g' is up to date.
+make[1]: Leaving directory `/home/travis/build/mozilla-b2g/gaia'
+[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m gaia@0.0.1 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m marionette-client@0.15.1 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m marionette-content-script@0.0.0 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m marionette-js-runner@0.1.0 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m marionette-profile-builder@0.0.2 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m json-wire-protocol@0.2.1 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m debug@0.6.0 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m marionette-client@0.12.1 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m marionette-b2gdesktop-host@0.5.1 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m mocha-json-proxy@0.0.6 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m mozilla-profile-builder@0.3.0 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m growl@1.7.0 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m ms@0.3.0 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m dmg@0.0.3 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m mozilla-runner@0.0.1 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m packaged-webapp@0.1.2 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m assert-plus@0.1.2 No repository field.
+[0m[37m[40mnpm[0m [0m[30m[41mWARN[0m [0m[35mpackage.json[0m ctype@0.5.2 No repository field.
+[0m
+  [93mâ€¤[0m[93mâ€¤[0m[93mâ€¤[0m[93mâ€¤[0m------ THIS A HACK WE NEED TO USE SYSTEM APPS HELPER ---
+[93mâ€¤[0m------ THIS A HACK WE NEED TO USE SYSTEM APPS HELPER ---
+[93mâ€¤[0m[93mâ€¤[0m[93mâ€¤[0m[93mâ€¤[0m[90mâ€¤[0m[93mâ€¤[0m[93mâ€¤[0m[33mâ€¤[0m[90mâ€¤[0m[93mâ€¤[0m[90mâ€¤[0m[93mâ€¤[0m
+
+[92m [0m[32m 17 passing[0m[90m (2 minutes)[0m
+
+
+[32;1mmake test-agent-test[0m
+[32;1m====================[0m
+Running all tests
+Cannot find busytime by id:  "foobar-15"
+Could not sync:  one/
+Iteration Error: Error: .dtstart (ICAL.Time) must be given
+Upgrading db
+Upgrading db done
+Browser database upgrade needed, upgrading.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Populating browser database.
+Alert: widget-no-sim2-heading
+widget-no-sim2-meta
+Alert: widget-sim-locked-heading
+widget-sim-locked-meta
+Alert: widget-sim-locked-heading
+widget-sim-locked-meta
+Power status: on
+The dock width should be equal to 16 according to mockup: 16
+[EVME migration] migrating from 1.0.1 to 1.1...
+[EVME migration] [userHistory]: retrieving...
+[EVME migration] [userHistory]: no value
+[EVME migration] [localShortcuts]: retrieving...
+[EVME migration] [localShortcuts]: no value
+[EVME migration] [localShortcutsIcons]: retrieving...
+[EVME migration] [localShortcutsIcons]: no value
+[EVME migration] complete successfully!
+no icon suite
+no icon suite
+Error Sending: {"name":null}
+Error Sending: {"name":null}
+Error Sending: {"name":null}
+Keyboard layout changed to newLanguage
+[2J[1;3H
+[92m [0m[32m 4954 tests complete[0m[90m (244 ms)[0m
+
+
+
+The command "bash ./tools/ci/unit/travis.sh" exited with 0.
+
+Done. Your build exited with 0.
+
