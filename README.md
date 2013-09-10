@@ -1,8 +1,8 @@
 # setup
 
-`npm install`
-`./bin/scrape`
+    npm install
+    ./bin/scrape
 
 To debug:
 
-`DEBUG=* ./bin/scrape`
+    DEBUG=* ./bin/scrape
