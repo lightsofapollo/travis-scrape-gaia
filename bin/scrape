@@ -1,0 +1,72 @@
+#! /usr/bin/env node
+
+var getBuilds = require('../lib/get_builds'),
+    getLog = require('../lib/get_log'),
+    parseLog = require('../lib/parse_log'),
+    debug = require('debug')('scrape'),
+    fs = require('fs');
+
+
+var BUILD_DIR = __dirname + '/../output';
+var JSON_MANIFEST_OUT = BUILD_DIR + '/builds.json';
+
+function json(object) {
+  return JSON.stringify(object, null, 2);
+}
+
+var built;
+try {
+  built = require(JSON_MANIFEST_OUT);
+} catch (e) {
+  built = {};
+}
+
+debug('builds')
+getBuilds(function(err, builds) {
+  var ids = Object.keys(builds);
+  debug('got ' + ids.length + 'builds');
+  var toBuild = [];
+
+  ids.forEach(function(id) {
+    if (!built[id]) {
+      toBuild.push(id);
+    }
+  });
+
+  debug('processing logs for builds:', toBuild);
+
+  var pending = toBuild.length;
+
+  function next() {
+    if (--pending === 0) {
+      fs.writeFileSync(JSON_MANIFEST_OUT, json(built));
+    }
+  }
+
+  toBuild.forEach(function(id) {
+    var buildFile = BUILD_DIR + '/' + id + '.json';
+    var relativePath = '/output/' + id + '.json';
+
+    var build = builds[id];
+    var buildOutput = {
+      build: build.build,
+      commit: build.commit
+    };
+
+    var jobId = build.build.job_ids[build.build.job_ids.length - 1];
+    getLog(jobId, function(err, log) {
+      try {
+        var parsed = parseLog(log);
+        buildOutput.testResults = parsed;
+        fs.writeFileSync(buildFile, json(buildOutput)); 
+        built[id] = relativePath;
+        debug('added', id, 'to the builds', parsed);
+      } catch (e) {
+        console.error('Failed to parse built')
+        console.error(e, e.stack);
+      }
+
+      next();
+    });
+  });
+});
